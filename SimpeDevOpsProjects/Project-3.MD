@@ -56,7 +56,7 @@ Passphrase / Password - password of that username
 10. Create Jenkins job 
 
 A) Source Code Management  
- Repository : https://github.com/ValaxyTech/hello-world.git  
+ Repository : https://github.com/arghya-roy/hello-world.git  
  Branches to build : */master  
 
 B) Build
