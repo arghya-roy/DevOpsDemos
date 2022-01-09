@@ -25,14 +25,10 @@ mkdir /opt/docker
 chown -R dockeradmin:dockeradmin /opt/docker
 
 
-### vi Dockerfile
-# Pull base image 
+vi Dockerfile
+
 From tomcat:8-jre8 
-
-# Maintainer
-MAINTAINER "valaxytech" 
-
-# copy war file on to container 
+MAINTAINER "valaxytech"  
 COPY ./webapp.war /usr/local/tomcat/webapps
 ```
 
