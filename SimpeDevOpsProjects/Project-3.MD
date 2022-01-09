@@ -26,8 +26,8 @@ chown -R dockeradmin:dockeradmin /opt/docker
 
 
 vi Dockerfile
-
-From tomcat:8-jre8 
+```
+From tomcat:8-jre8  
 MAINTAINER "valaxytech"  
 COPY ./webapp.war /usr/local/tomcat/webapps
 ```
