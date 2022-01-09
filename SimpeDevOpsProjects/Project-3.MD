@@ -16,14 +16,14 @@ passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
 vi /etc/ssh/sshd_config
-# allow password authentication
+allow password authentication
 service sshd restart
 
 
 4. Write a Docker file under /opt/docker
-
-```sh
 mkdir /opt/docker
+chown -R dockeradmin:dockeradmin /opt/docker
+
 
 ### vi Dockerfile
 # Pull base image 
