@@ -15,6 +15,10 @@ useradd dockeradmin
 passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
+vi /etc/ssh/sshd_config
+# allow password authentication
+service sshd restart
+
 
 4. Write a Docker file under /opt/docker
 
