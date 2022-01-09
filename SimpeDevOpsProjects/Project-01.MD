@@ -10,7 +10,7 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
 ### Part-01 : Adding steps for Integration
 ### Steps to create Jenkin job
 1. Login to Jenkins console
-1. Create *Jenkins job*, Fill the following details,
+1. Create *Jenkins job - maven job*, Fill the following details,
    - *Source Code Management:*
       - Repository: `https://github.com/ValaxyTech/hello-world.git`
       - Branches to build : `*/master`  
@@ -22,7 +22,7 @@ We know how to use work with each and Git, Jenkins independently. What if you wa
 in this port we are going to install 'deploy to container' plugin. this is need to deploy on tomcat server which we are using. 
 
 - Install maven plugin without restart  
-  - `Manage Jenkins` > `Jenkins Plugins` > `available` > `deploy to container`
+  - `Manage Jenkins` > `Jenkins Plugins` > `available` > `deploy to container and maven`
  
 To deploy our build artifacts on tomcat server our Jenkins server need access. For this we should setup credentials. This option is available in Jenkins home page
 
