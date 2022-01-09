@@ -15,24 +15,34 @@ useradd dockeradmin
 passwd dockeradmin
 usermod -aG docker dockeradmin
 ```
+4. allow password authentication
+```
 vi /etc/ssh/sshd_config
-allow password authentication
-service sshd restart
+service sshd restart 
+```
 
 
-4. Write a Docker file under /opt/docker
+5. Create a folder to write a Docker file under /opt/docker
+```
 mkdir /opt/docker
+```
+6. give ownership of that folder to dockeradmin user, by default it is owned by root
+```
 chown -R dockeradmin:dockeradmin /opt/docker
+```
 
-
+7. Create dockerfile
+```
 vi Dockerfile
+```
+8. Write file
 ```
 From tomcat:8-jre8  
 MAINTAINER "valaxytech"  
 COPY ./webapp.war /usr/local/tomcat/webapps
 ```
 
-5. Login to Jenkins console and add Docker server to execute commands from Jenkins  
+9. Login to Jenkins console and add Docker server to execute commands from Jenkins  
 Manage Jenkins --> Configure system -->  Publish over SSH --> add Docker server and credentials
 ```
 Name - which name is given under name tag
@@ -43,7 +53,7 @@ Passphrase / Password - password of that username
 ```
 
 
-6. Create Jenkins job 
+10. Create Jenkins job 
 
 A) Source Code Management  
  Repository : https://github.com/ValaxyTech/hello-world.git  
@@ -71,13 +81,13 @@ D) send files or execute commands over SSH
   Name: `docker_host`  
   Exec command	: `docker run -d --name valaxy_demo -p 8090:8080 valaxy_demo`  
 
-7. Login to Docker host and check images and containers. (no images and containers)
+11. Login to Docker host and check images and containers. (no images and containers)
 
-8. Execute Jenkins job
+12. Execute Jenkins job
 
-9. check images and containers again on Docker host. This time an image and container get creates through Jenkins job
+13. check images and containers again on Docker host. This time an image and container get creates through Jenkins job
 
-10. Access web application from browser which is running on container
+14. Access web application from browser which is running on container
 ```
 <docker_host_Public_IP>:8090/webapp/
 ```
